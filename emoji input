@@ -1,0 +1,70 @@
+HTML:
+<div class="row">
+  <div class="span6">
+    <textarea id="emojionearea1">Default :smile:</textarea>
+  </div>
+  <div class="span6">
+    <input type="text" id="emojionearea2" value="inline :+1:"/>
+  </div>
+</div>
+<div class="row">
+  <div class="span6">
+    <div id="emojionearea3">Support autocompleting, insert ":" </div>
+  </div>
+  <div class="span6">
+    <input type="text" id="emojionearea4" value=":smiley_cat:"/>
+  </div>
+</div>
+<div class="span6">
+    <textarea id="emojionearea5">Disable tones, disable autocomplete :dog::cat:</textarea>
+</div>
+
+
+JS:
+$(document).ready(function() {
+	$("#emojionearea1").emojioneArea({
+  	pickerPosition: "left",
+    tonesStyle: "bullet"
+  });
+	$("#emojionearea2").emojioneArea({
+  	pickerPosition: "bottom",
+    tonesStyle: "radio"
+  });
+	$("#emojionearea3").emojioneArea({
+  	pickerPosition: "left",
+  	filtersPosition: "bottom",
+    tonesStyle: "square"
+  });
+	$("#emojionearea4").emojioneArea({
+  	pickerPosition: "bottom",
+  	filtersPosition: "bottom",
+    tonesStyle: "checkbox"
+  });
+	$("#emojionearea5").emojioneArea({
+  	pickerPosition: "top",
+  	filtersPosition: "bottom",
+    tones: false,
+    autocomplete: false,
+    inline: true,
+    hidePickerOnBlur: false
+  });
+});
+
+
+CSS:
+* {
+  font-family: Arial, Helvetica, san-serif;
+}
+.row:after, .row:before {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.span6 {
+  float: left;
+  width: 48%;
+  padding: 1%;
+}
+.emojionearea-editor:not(.inline) {
+  min-height: 8em!important;
+}
